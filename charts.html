@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Charts API</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <style>
+            #the-chart {
+                display: block;
+                height: 500px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="the-chart"></canvas>
+        <script src="bower_components/paper/dist/paper-full.js"></script>
+        <script src="charts-canvas-paper.js"></script>
+        <script>
+            (function(win){
+                var doc = win.document,
+                    canvas = doc.getElementById('the-chart');
+
+                var factory = new PaperChartFactory();
+
+                var chart = factory.createChart('xy', canvas);
+
+                chart.addSeries([1, 2.3, 2, 1.7, 0.5], 'bar', { fillColor: 'blue' });
+
+                chart.addSeries([100, 50, 20, 10, 80], 'bar', { fillColor: 'green'});
+
+                chart.addSeries([ 0.1, 0.2, 0.4, 0.3, 0.8 ], 'line', { strokeColor: 'black' });
+                
+                chart.setCategory(['Jānis', 'Pēteris', 'Anna', 'Juris', 'Maija']);
+
+                chart.render();
+            })(this);
+        </script>
+    </body>
+</html>

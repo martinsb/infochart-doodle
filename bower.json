@@ -1,0 +1,19 @@
+{
+  "name": "chart-api",
+  "version": "0.0.0",
+  "authors": [
+    "Martins Barinskis <mb@infogr.am>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "paper": ""
+  }
+}
